@@ -41,3 +41,18 @@ CREATE TABLE habitacion(
     PRIMARY KEY (idHabitacion),
     FOREIGN KEY (idCategoria) REFERENCES categoria(idCategoria)
 );
+
+CREATE TABLE reserva(
+	idReserva int(11) NOT null AUTO_INCREMENT,
+    idHabitacion int(11) NOT null,
+    idHuesped int(11) NOT null,
+    fechaInicio date NOT null,
+    fechaFin date NOT null,
+    precioTotal double NOT null,
+    cantPersonas int(11) NOT null,
+    activo tinyint(1) not null,
+    
+    PRIMARY KEY (idReserva),
+    FOREIGN KEY (idHabitacion) REFERENCES habitacion(idHabitacion),
+    FOREIGN KEY (idHuesped) REFERENCES huesped(idHuesped)
+);
