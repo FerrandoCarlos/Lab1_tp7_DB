@@ -164,10 +164,8 @@ ALTER TABLE `reserva`
 COMMIT;
 
 
---#INSERT de los equipos -> INSERT INTO `mascotas`(name de las columnas) VALUES (valores); names de las columnas son necesario si norespetan el orden o si omiten una columna
+--INSERT de los equipos -> INSERT INTO `mascotas`(name de las columnas) VALUES (valores); names de las columnas son necesario si norespetan el orden o si omiten una columna
+--
+--INSERT INTO mascotas(cantPersonas,cantCama,tipoCamas,tipoHabitacion,precio,activo) VALUES (3,2,9,'matrimonial',90.000,1);
 
-INSERT INTO mascotas(cantPersonas,cantCama,tipoCamas,tipoHabitacion,precio,activo) VALUES (3,2,9,'matrimonial',90.000,1);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
