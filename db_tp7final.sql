@@ -166,6 +166,6 @@ COMMIT;
 
 
 
-INSERT INTO categoria (cantPersonas,cantCama,tipoCamas,tipoHabitacion,precio,activo) VALUES (3,2,9,'matrimonial',90.000,1);
+INSERT INTO categoria (cantPersonas,cantCamas,tipoCamas,tipoHabitacion,precio,activo) VALUES (3,2,9,'matrimonial',90.000,1);
 
 
