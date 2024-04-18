@@ -164,7 +164,7 @@ ALTER TABLE `reserva`
 COMMIT;
 
 
---#INSERT de los equipos
+--#INSERT de los equipos -> INSERT INTO `mascotas`(name de las columnas) VALUES (valores); names de las columnas son necesario si norespetan el orden o si omiten una columna
 
 
 
