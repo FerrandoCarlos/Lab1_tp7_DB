@@ -1,0 +1,43 @@
+--Creación Base de Datos
+
+CREATE DATABASE db_tp7final;
+USE db_tp7final;
+
+--Creación de las tablas
+
+CREATE TABLE huesped(
+	idHuesped int(11) NOT null AUTO_INCREMENT,
+    nombre char(25) NOT null,
+    apellido char(25) NOT null,
+    dni int(20) NOT null,
+    domicilio char(30) not null,
+    correo char(30) not null,
+    celular varchar(30) not null,
+    activo tinyint(1) not null,
+    
+    PRIMARY KEY (idHuesped),
+    UNIQUE (dni)
+);
+
+CREATE TABLE categoria(
+	idCategoria int(11) NOT null AUTO_INCREMENT,
+    cantPersonas int(11) NOT null,
+    cantCamas int(11) NOT null,
+    tipoCamas int(11) NOT null,
+    tipoHabitacion varchar(11) not null,
+    precio double not null,
+    activo tinyint(1) not null,
+    
+    PRIMARY KEY (idCategoria)
+);
+
+CREATE TABLE habitacion(
+	idHabitacion int(11) NOT null AUTO_INCREMENT,
+    idCategoria int(11) NOT null,
+    nmroHabitacion int(11) NOT null,
+    piso int(11) NOT null,
+    refaccion tinyint(1) not null,
+    
+    PRIMARY KEY (idHabitacion),
+    FOREIGN KEY (idCategoria) REFERENCES categoria(idCategoria)
+);
