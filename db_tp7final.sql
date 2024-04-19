@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2024 at 04:15 PM
+-- Generation Time: Apr 19, 2024 at 02:51 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,9 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_tp7final`
 --
-CREATE DATABASE IF NOT EXISTS db_tp7final CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
 -- --------------------------------------------------------
-USE db_tp7final;
+
 --
 -- Table structure for table `categoria`
 --
@@ -37,6 +37,14 @@ CREATE TABLE `categoria` (
   `activo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `categoria`
+--
+
+INSERT INTO `categoria` (`idCategoria`, `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) VALUES
+(1, 3, 2, 9, 'matrimonial', 90, 1),
+(2, 4, 2, 100, 'economica', 3000, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +58,13 @@ CREATE TABLE `habitacion` (
   `piso` int(11) NOT NULL,
   `refaccion` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `habitacion`
+--
+
+INSERT INTO `habitacion` (`idHabitacion`, `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) VALUES
+(1, 1, 14, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -68,6 +83,13 @@ CREATE TABLE `huesped` (
   `activo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `huesped`
+--
+
+INSERT INTO `huesped` (`idHuesped`, `nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) VALUES
+(1, 'Carlos', 'Ferrando', 281746321, 'La Calle 1234', 'elcarlor@correo.com', '26643234242', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +106,13 @@ CREATE TABLE `reserva` (
   `cantPersonas` int(11) NOT NULL,
   `activo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reserva`
+--
+
+INSERT INTO `reserva` (`idReserva`, `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) VALUES
+(1, 1, 1, '2024-04-18', '2024-04-25', 150000, 3, 1);
 
 --
 -- Indexes for dumped tables
@@ -125,25 +154,25 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `habitacion`
 --
 ALTER TABLE `habitacion`
-  MODIFY `idHabitacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHabitacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `huesped`
 --
 ALTER TABLE `huesped`
-  MODIFY `idHuesped` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHuesped` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -163,9 +192,6 @@ ALTER TABLE `reserva`
   ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`idHuesped`) REFERENCES `huesped` (`idHuesped`);
 COMMIT;
 
-
-
-
-INSERT INTO categoria (cantPersonas,cantCamas,tipoCamas,tipoHabitacion,precio,activo) VALUES (3,2,9,'matrimonial',90.000,1);
-
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
