@@ -57,9 +57,15 @@ CREATE TABLE reserva(
     FOREIGN KEY (idHuesped) REFERENCES huesped(idHuesped)
 );
 --Ingreso de datos
---Insert Ferrando Carlos
+--I n s e r t Ferrando Carlos
 INSERT INTO `categoria` (`idCategoria`, `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) VALUES (NULL, '4', '2', '100', 'economica', '3000', '1');
 INSERT INTO `habitacion` (`idHabitacion`, `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) VALUES (NULL, '1', '14', '1', '0');
 INSERT INTO `huesped` (`idHuesped`, `nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) VALUES (NULL, 'Carlos', 'Ferrando', '281746321', 'La Calle 1234', 'elcarlor@correo.com', '26643234242', '1');
 INSERT INTO `reserva` (`idReserva`, `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) VALUES (NULL, '1', '1', '2024-04-18', '2024-04-25', '150000', '3', '1');
+
+--I n s e r t Martin Piriz
+INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) VALUES ('2', '1', '10', 'vip', '5000', '1');
+INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) VALUES ('2', '1', '3', '1');
+INSERT INTO `huesped` (`nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) VALUES ( 'Martin', 'Piriz', '34877112', 'junin 123', 'mpirizdutra@gmail.com', '2664859913', '1');
+INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) VALUES ('2', '2', '2024-04-10', '2024-04-28', '190000', '3', '1');
 --Fin Insert
