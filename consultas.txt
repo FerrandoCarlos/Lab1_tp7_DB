@@ -9,11 +9,11 @@ USE db_tp7final;
 CREATE TABLE huesped(
 
     idHuesped int(11) NOT null AUTO_INCREMENT,
-    nombre char(25) NOT null,
-    apellido char(25) NOT null,
+    nombre varchar(25) NOT null,
+    apellido varchar(25) NOT null,
     dni int(20) NOT null,
-    domicilio char(30) not null,
-    correo char(30) not null,
+    domicilio varchar(30) not null,
+    correo varchar(30) not null,
     celular varchar(30) not null,
     activo tinyint(1) not null,
     
@@ -65,26 +65,40 @@ CREATE TABLE reserva(
 --Ingreso de datos
 
 --I n s e r t Ferrando Carlos
-INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) VALUES (4, 2, 100, 'economica', 3000, 1);
-INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) VALUES (1, 14, 1, 0);
-INSERT INTO `huesped` ( `nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) VALUES ('Carlos', 'Ferrando', 281746321, 'La Calle 1234', 'elcarlor@correo.com', '26643234242', 1);
-INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) VALUES (1, 1, '2024-04-18', '2024-04-25', 150000, 3, 1);
+INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) 
+VALUES (4, 2, 100, 'economica', 3000, 1);
+INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) 
+VALUES (1, 14, 1, 0);
+INSERT INTO `huesped` ( `nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) 
+VALUES ('Carlos', 'Ferrando', 281746321, 'La Calle 1234', 'elcarlor@correo.com', '26643234242', 1);
+INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) 
+VALUES (1, 1, '2024-04-18', '2024-04-25', 150000, 3, 1);
+--Fin Insert
 
 --I n s e r t Martin Piriz
-INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) VALUES (2, 1, 0, 'vip', 5000, 1);
-INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) VALUES (2, 1, 3, 1);
-INSERT INTO `huesped` (`nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) VALUES ( 'Martin', 'Piriz', 34877112, junin 123, 'mpirizdutra@gmail.com', '2664859913', 1);
-INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) VALUES (2, 2, '2024-04-10', '2024-04-28', 190000, 3, 1);
+INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) 
+VALUES (2, 1, 0, 'vip', 5000, 1);
+INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) 
+VALUES (2, 1, 3, 1);
+INSERT INTO `huesped` (`nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) 
+VALUES ( 'Martin', 'Piriz', 34877112, 'junin 123', 'mpirizdutra@gmail.com', '2664859913', 1);
+INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) 
+VALUES (2, 2, '2024-04-10', '2024-04-28', 190000, 3, 1);
 --Fin Insert
 
 --Insert Agustin Jofre
-INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) VALUES ('2', '1', '10', 'vip', '5000', '1');
-INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) VALUES ('2', '1', '3', '1');
-INSERT INTO `huesped` (`nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) VALUES ( 'Agustin', 'Jofre', '38751595', 'illia 226', 'agus110196@gmail.com', '2664456787', '1');
-INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) VALUES ('3', '3', '2024-04-12', '2024-04-25', '160000', '3', '1');
+INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) 
+VALUES (2, 1, 10, 'vip', 5000, 1);
+INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) 
+VALUES (2, 1, 3, 1);
+INSERT INTO `huesped` (`nombre`, `apellido`, `dni`, `domicilio`, `correo`, `celular`, `activo`) 
+VALUES ( 'Agustin', 'Jofre', 38751595, 'illia 226', 'agus110196@gmail.com', '2664456787', 1);
+INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) 
+VALUES (3, 3, '2024-04-12', '2024-04-25', 160000, 3, 1);
 --Fin Insert
 --INSERT Ariel
-INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) VALUES(1, 1, 14, 1, 0); 
+INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) 
+VALUES(1, 1, 14, 1, 0); 
 --FIN INSERT
 
 
