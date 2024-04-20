@@ -75,7 +75,7 @@ INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, 
 VALUES (1, 1, '2024-04-18', '2024-04-25', 150000, 3, 1);
 --Fin Insert
 
---I n s e r t Martin Piriz
+--Insert Martin Piriz
 INSERT INTO `categoria` ( `cantPersonas`, `cantCamas`, `tipoCamas`, `tipoHabitacion`, `precio`, `activo`) 
 VALUES (2, 1, 0, 'vip', 5000, 1);
 INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) 
@@ -96,6 +96,7 @@ VALUES ( 'Agustin', 'Jofre', 38751595, 'illia 226', 'agus110196@gmail.com', '266
 INSERT INTO `reserva` ( `idHabitacion`, `idHuesped`, `fechaInicio`, `fechaFin`, `precioTotal`, `cantPersonas`, `activo`) 
 VALUES (3, 3, '2024-04-12', '2024-04-25', 160000, 3, 1);
 --Fin Insert
+
 --INSERT Ariel
 INSERT INTO `habitacion` ( `idCategoria`, `nmroHabitacion`, `piso`, `refaccion`) 
 VALUES(1, 1, 14, 1, 0); 
